@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Ingredient Distributor</title>
+        <meta charset="utf-8">
+        <meta name="description" content="A tool to distribute ingredients across meals with live updates.">
+        <meta name="author" content="Nathan Gurrin-Smith">
+        <meta name="keywords" content="macronutrient, distribution, meal, food, diet, nutrition">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/13.0.0/math.js" integrity="sha512-YwFcgvV5CtE1kAnYDaIfoeydQnjRd/9YvYvi4MtRuFGAYVilHTD8qvvHrI/IJ7umguCooEUfctGo/9EKqdd1OA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+        <script type="text/javascript" src="bundle.js"></script>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function() {
+                document.getElementById("recipe-table").addEventListener("input", updateDistributionTable);
+                document.getElementById("portion-table").addEventListener("input", updateDistributionTable);
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <div id="header-div">
+                <h1 id="header-text">Ingredient Distributor</h1>
+                <img id="header-gif" src="lil_guy.gif"/>
+            </div>
+            <hr class="separator"/>
+        </header>
+        <main>
+            <p>
+                Hello! This webpage is a tool my partner and I use for distributing ingredient amount across portions of meals.
+            </p>
+            <p>
+                To use the tool, enter the weight of each ingredient in the table below. Then, enter the weight of each portion into the second table below. Then, Nathan himself (definitely) will speedily calculate the amount of each ingredient that is in each portion, assuming everything is perfectly distributed.
+            </p>
+            <table id="recipe-table">
+                <thead>
+                    <tr>
+                        <th class="col1">Item</th>
+                        <th class="col2">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <script>
+                    addRecipeRow();
+                </script>
+            </table>
+            <div id="global-button-div">
+                <button class="button" onclick="addRecipeRow(); updateDistributionTable();">Add Row</button>
+            </div>
+            <br>
+            <table id="portion-table">
+                <thead>
+                    <tr>
+                        <th class="col1">Portion Name</th>
+                        <th class="col2">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <script>
+                    addPortionRow();
+                </script>
+            </table>
+            <div id="global-button-div">
+                <button class="button" onclick="addPortionRow(); updateDistributionTable();">Add Row</button>
+            </div>
+            <br>
+        <table id="distribution-table">
+            <thead>
+                <tr>
+                    <th class="col1">Ingredient</th>
+                    <th class="col2"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col1"></td>
+                    <td class="col2"></td>
+                </tr>
+            </tbody>
+        </table>
+        </main>
+        <footer>
+            <hr class="separator"/>
+            <div id="footer-div">
+                <p>Progenitor: Nathan Gurrin-Smith</p>
+                <p><a href="https://github.com/nathangs6/spice-conversion">source</a></p>
+                <p><a href="https://www.nathangs.ca/index.html?theme=gruvbox">www.nathangs.ca</a></p>
+            </div>
+        </footer>
+    </body>
+</html>
