@@ -1,14 +1,14 @@
 {
-  "name": "macro_calc",
+  "name": "portionizer",
   "version": "1.0.0",
-  "description": "macronutrient proportion calculator",
-  "homepage": "https://github.com/nathangs6/macro_calc#readme",
+  "description": "portion calculator",
+  "homepage": "https://github.com/nathangs6/portionizer#readme",
   "bugs": {
-    "url": "https://github.com/nathangs6/macro_calc/issues"
+    "url": "https://github.com/nathangs6/portionizer/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nathangs6/macro_calc.git"
+    "url": "git+https://github.com/nathangs6/portionizer.git"
   },
   "license": "ISC",
   "author": "",

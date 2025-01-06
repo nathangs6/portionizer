@@ -16,8 +16,12 @@
         <script type="text/javascript" src="bundle.js"></script>
         <script type="text/javascript">
             document.addEventListener("DOMContentLoaded", function() {
-                document.getElementById("recipe-table").addEventListener("input", updateDistributionTable);
-                document.getElementById("portion-table").addEventListener("input", updateDistributionTable);
+                document.getElementById("recipe-table").addEventListener("input", window.updateDistributionTable);
+                document.getElementById("portion-table").addEventListener("input", window.updateDistributionTable);
+            });
+            window.addEventListener("load", function() {
+                window.addRecipeRow();
+                window.addPortionRow();
             });
         </script>
     </head>
@@ -45,9 +49,6 @@
                 </thead>
                 <tbody>
                 </tbody>
-                <script>
-                    addRecipeRow();
-                </script>
             </table>
             <div id="global-button-div">
                 <button class="button" onclick="addRecipeRow(); updateDistributionTable();">Add Row</button>
@@ -62,9 +63,6 @@
                 </thead>
                 <tbody>
                 </tbody>
-                <script>
-                    addPortionRow();
-                </script>
             </table>
             <div id="global-button-div">
                 <button class="button" onclick="addPortionRow(); updateDistributionTable();">Add Row</button>
